@@ -1,0 +1,34 @@
+﻿<Window x:Class="Client.ConnectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+             Width="265.5" Height="250">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition Height="Auto" MinHeight="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="102"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2">Вход</TextBlock>
+        <TextBlock Grid.Row="1" Text="IP сервера:" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,4,0,10"/>
+        <TextBox x:Name="tbHost" MaxHeight="20" MinHeight="20"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" TextChanged="tbHost_TextChanged" Margin="10,0,10,0"/>
+        <TextBlock Grid.Row="2" Text="Порт:" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,10" TextAlignment="Right"/>
+        <TextBox x:Name="tbPort" MaxHeight="20" MinHeight="20" Grid.Row="2" Grid.Column="1" TextChanged="tbPort_TextChanged" Margin="10,0,10,0"/>
+        <TextBlock Grid.Row="3" Text="Имя пользователя:" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,10" />
+        <TextBox x:Name="tbUser" MaxHeight="20" MinHeight="20" Grid.Row="3" Grid.Column="1" TextChanged="tbName_TextChanged" Margin="10,0,10,0"/>
+        <CheckBox x:Name="cbIsLocal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="4" Checked="CbIsLocal_OnChecked" Unchecked="CbIsLocal_OnUnchecked">localhost</CheckBox>
+        <Button x:Name="btnOk" Grid.ColumnSpan="2" Grid.Column="0" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Center" Width="76" Margin="41,6,0,24" Grid.Row="5" Click="Button_Click" 
+                BorderBrush="Gainsboro" Background="#EDEFF0"/>
+        <Button x:Name="btnCancel" BorderBrush="Gainsboro" Background="#EDEFF0" Content="Отмена" Grid.Column="1"  HorizontalAlignment="Left" Margin="34,6,0,24" IsCancel="True" Grid.Row="5" VerticalAlignment="Center" Width="76" Click="Button_Click_1" Height="20"/>
+    </Grid>
+</Window>
